@@ -1,6 +1,5 @@
 Cognitive Distortions Tracker
 
-Android app built with Kotlin that helps users track cognitive distortions based on The Feeling Good Handbook by David D. Burns.
 This app aims to raise awareness about cognitive distortions, providing a tool for users to recognize and document them.
 
 Features
