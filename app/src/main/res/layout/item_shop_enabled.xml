@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+        <variable
+            name="shopItem"
+            type="com.kurbatov.appcbt.domain.ShopItem" />
+    </data>
+
+
+    <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_card_shape"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/andika_bold"
+                android:text='@{@string/time_item_card + " : " + shopItem.time}'
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:text="Время : 5 Октярбря 15:10" />
+
+            <TextView
+                android:id="@+id/tv_situation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/label_card_item_shape"
+                android:fontFamily="@font/andika_bold"
+                android:padding="4dp"
+                android:text='@{@string/situation_item_card + " : " + shopItem.situation}'
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="@{shopItem.situation.isEmpty() ? View.GONE : View.VISIBLE}"
+                tools:text="Ситуация" />
+
+            <TextView
+                android:id="@+id/tv_emotion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/label_card_item_shape"
+                android:fontFamily="@font/andika_bold"
+                android:padding="4dp"
+                android:text='@{@string/emotion_item_card + " : " + shopItem.emotion}'
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="@{shopItem.emotion.isEmpty() ? View.GONE : View.VISIBLE}"
+                tools:text="Эмоции" />
+
+            <TextView
+                android:id="@+id/tv_thought"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/label_card_item_shape"
+                android:fontFamily="@font/andika_bold"
+                android:padding="4dp"
+                android:text='@{@string/thought_item_card + " : " + shopItem.thought}'
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="@{shopItem.thought.isEmpty() ? View.GONE : View.VISIBLE}"
+                tools:text="Мысли :" />
+
+            <TextView
+                android:id="@+id/tv_sensations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/label_card_item_shape"
+                android:fontFamily="@font/andika_bold"
+                android:padding="4dp"
+                android:text='@{@string/sensations_item_card + " : " + shopItem.sensations}'
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="@{shopItem.sensations.isEmpty() ? View.GONE : View.VISIBLE}"
+                tools:text="Чувства :" />
+
+            <TextView
+                android:id="@+id/tv_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/label_card_item_shape"
+                android:fontFamily="@font/andika_bold"
+                android:padding="4dp"
+                android:text='@{@string/actions_item_card + " : " + shopItem.actions}'
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="@{shopItem.actions.isEmpty() ? View.GONE : View.VISIBLE}"
+                tools:text="Действия" />
+
+            <TextView
+                android:id="@+id/tv_answer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/label_card_item_shape"
+                android:fontFamily="@font/andika_bold"
+                android:padding="4dp"
+                android:text='@{@string/answer_item_card + " : " + shopItem.answer}'
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="@{shopItem.answer.isEmpty() ? View.GONE : View.VISIBLE}"
+                tools:text="Ответ" />
+
+            <TextView
+                android:id="@+id/tv_distortions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/distortion_list_shape"
+                android:fontFamily="@font/andika_italic"
+                android:padding="4dp"
+                android:text='@{@string/distortions_item_card + " : " + shopItem.distortionsList.toString().replace("]", "").replace("[", "")}'
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:visibility="@{shopItem.distortionsList.isEmpty ? View.GONE : View.VISIBLE}"
+                tools:text="Искажения: Негативный фильтр" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</layout>

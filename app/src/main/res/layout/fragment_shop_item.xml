@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.text.TextUtils" />
+
+        <variable
+            name="viewModel"
+            type="com.kurbatov.appcbt.presentation.ShopItemViewModel" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/color_02"
+        android:fillViewport="true"
+        android:gravity="top">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".presentation.ShopItemFragment">
+
+            <TextView
+                android:id="@+id/textViewTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:background="@color/grey"
+                android:fontFamily="@font/amatic_bold"
+                android:gravity="center_horizontal"
+
+                android:paddingTop="8dp"
+                android:text="@{!TextUtils.isEmpty(viewModel.shopItem.time) ? viewModel.shopItem.time : viewModel.currentTime}"
+                android:textColor="@color/grey_text"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@id/til_situation"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="parent"
+                tools:text="09 Октября 21:35" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_situation"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@id/til_emotion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textViewTime"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_situation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_item"
+                    android:fontFamily="@font/andika_regular"
+                    android:hint="@string/situation"
+                    android:inputType="textMultiLine"
+                    android:minHeight="40dp"
+                    android:padding="8dp"
+                    android:text="@{viewModel.shopItem.situation}"
+                    android:textSize="16sp"
+                    tools:text="иного алвпрадлрвлда авлров лрвла вал лавр олваро вал рлвалр вадрлвадл рвлда рлвал двалр адрв" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_emotion"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@id/til_thought"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_situation"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_emotion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_item"
+                    android:fontFamily="@font/andika_regular"
+                    android:hint="@string/emotion"
+                    android:inputType="textMultiLine"
+                    android:minHeight="40dp"
+                    android:padding="8dp"
+                    android:text="@{viewModel.shopItem.emotion}"
+                    android:textSize="16sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_thought"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@id/til_sensations"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_emotion"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_thought"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_item"
+                    android:fontFamily="@font/andika_regular"
+                    android:hint="@string/thought"
+                    android:inputType="textMultiLine"
+                    android:minHeight="40dp"
+                    android:padding="8dp"
+                    android:text="@{viewModel.shopItem.thought}"
+                    android:textSize="16sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_sensations"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@id/til_actions"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_thought"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_sensations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_item"
+                    android:fontFamily="@font/andika_regular"
+                    android:hint="@string/sensations"
+                    android:inputType="textMultiLine"
+                    android:minHeight="40dp"
+                    android:padding="8dp"
+                    android:text="@{viewModel.shopItem.sensations}"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_actions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@id/til_answer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_sensations"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_actions"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_item"
+                    android:fontFamily="@font/andika_regular"
+                    android:hint="@string/actions"
+                    android:inputType="textMultiLine"
+                    android:minHeight="40dp"
+                    android:padding="8dp"
+                    android:text="@{viewModel.shopItem.actions}"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_answer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="4dp"
+                app:layout_constraintBottom_toTopOf="@id/distortionsLinearlayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/til_actions"
+                app:layout_constraintVertical_chainStyle="packed">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_answer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/input_item"
+                    android:fontFamily="@font/andika_regular"
+                    android:hint="@string/answer"
+                    android:inputType="textMultiLine"
+                    android:minHeight="40dp"
+                    android:padding="8dp"
+                    android:text="@{viewModel.shopItem.answer}"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <LinearLayout
+                android:id="@+id/distortionsLinearlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:gravity="left"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toTopOf="@id/layout_bottom"
+                app:layout_constraintTop_toBottomOf="@+id/til_answer"
+                tools:layout_editor_absoluteX="8dp">
+
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_overgeneralization"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/overgeneralization)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/overgeneralization"
+                    android:textSize="18sp"
+                    tools:checked="true" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_all_or_nothing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/all_or_nothing)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/all_or_nothing"
+                    android:textSize="18sp"
+                    tools:checked="true" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_negative_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/negative_filter)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/negative_filter"
+                    android:textSize="18sp"
+                    tools:checked="false" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_devaluation_of_positive"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/devaluation_of_the_positive)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/devaluation_of_the_positive"
+                    android:textSize="18sp"
+                    tools:checked="false" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_conclusions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/conclusions)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/conclusions"
+                    android:textSize="18sp"
+                    tools:checked="false" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_exaggeration_and_understatement"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/exaggeration_and_understatement)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/exaggeration_and_understatement"
+                    android:textSize="18sp"
+                    tools:checked="false" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_emotional_justification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/emotional_justification)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/emotional_justification"
+                    android:textSize="18sp"
+                    tools:checked="false" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_obligation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/obligation)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/obligation"
+                    android:textSize="18sp"
+                    tools:checked="false" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_labels"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/labels)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/labels"
+                    android:textSize="18sp"
+                    tools:checked="false" />
+
+                <androidx.appcompat.widget.AppCompatCheckBox
+                    android:id="@+id/checkbox_personalization"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/checkbox_selector"
+                    android:button="@android:color/transparent"
+                    android:checked="@{viewModel.shopItem.distortionsList.contains(@string/personalization)}"
+                    android:fontFamily="@font/andika_italic"
+                    android:padding="8dp"
+                    android:text="@string/personalization"
+                    android:textSize="18sp"
+                    tools:checked="false" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_bottom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@color/grey"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:paddingBottom="16dp"
+                app:layout_constraintTop_toBottomOf="@id/distortionsLinearlayout">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/cancel_button"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/button_cancel_shape"
+                    android:fontFamily="@font/andika_bold"
+                    android:padding="8dp"
+                    android:text="@string/cancel"
+                    android:textSize="14sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/save_button"
+                    android:layout_width="120dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/button_edit_shape"
+                    android:fontFamily="@font/andika_bold"
+                    android:padding="8dp"
+                    android:text="@string/save"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

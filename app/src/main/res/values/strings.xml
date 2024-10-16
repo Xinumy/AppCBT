@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">AppCBT</string>
+    <string name="error_input_count">Invalid count</string>
+    <string name="error_input_name">Invalid name</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="situation">Situation</string>
+    <string name="emotion">Emotion</string>
+    <string name="thought">Though</string>
+    <string name="sensations">Sensations</string>
+    <string name="actions">Actions</string>
+    <string name="answer">Answer</string>
+    <string name="overgeneralization">Overgeneralization</string>
+    <string name="all_or_nothing">All or nothing</string>
+    <string name="negative_filter">Negative filter</string>
+    <string name="devaluation_of_the_positive">Devaluation of the positive</string>
+    <string name="conclusions">Conclusions</string>
+    <string name="exaggeration_and_understatement">Exaggeration and understatement</string>
+    <string name="emotional_justification">Emotional justification</string>
+    <string name="obligation">Obligation</string>
+    <string name="personalization">Overgeneralization</string>
+    <string name="labels">Labels</string>
+    <string name="time_item_card">Time</string>
+    <string name="situation_item_card">Situation</string>
+    <string name="emotion_item_card">Emotion</string>
+    <string name="thought_item_card">Thought</string>
+    <string name="sensations_item_card">Sensations</string>
+    <string name="actions_item_card">Actions</string>
+    <string name="answer_item_card">Answer</string>
+    <string name="distortions_item_card">Distortions</string>
+</resources>
